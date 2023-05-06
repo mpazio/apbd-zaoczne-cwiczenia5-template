@@ -6,7 +6,7 @@ W niniejszym zadaniu skorzystamy z biblioteki **EntityFramework Core**.
 
 Poniżej przedstawiony jest diagram na którym będziemy pracować.
 
-![alt text](../SqlData/cw5DatabaseERD.PNG "Title")
+![alt text](./SqlData/cw5DatabaseERD.PNG "Title")
 
 ## Wymogi zadania
 
