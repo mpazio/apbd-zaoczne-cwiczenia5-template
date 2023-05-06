@@ -11,10 +11,10 @@ Poniżej przedstawiony jest diagram na którym będziemy pracować.
 ## Wymogi zadania
 
 1. Stwórz aplikację typu REST Api.
-2. Przygotuj końcówkę zwracającą dane z pomocą EntityFramework Core zgodnie z poniższymi informacjami:
-   a. Końcówkę odpowiadającą na żądania **HTTP GET** wysyłane na adres `/api/trips`
-   b. Końcówka powinna zwrócić listę podróży w kolejności **posortowanej** **malejącą** po dacie rozpoczęcia wycieczki.
-   c. Poniżej przedstawiony przykładowy format zwróconych danych.
+2. Przygotuj końcówkę zwracającą dane z pomocą EntityFramework Core zgodnie z poniższymi informacjami:  
+   a. Końcówkę odpowiadającą na żądania **HTTP GET** wysyłane na adres `/api/trips`  
+   b. Końcówka powinna zwrócić listę podróży w kolejności **posortowanej** **malejącą** po dacie rozpoczęcia wycieczki.  
+   c. Poniżej przedstawiony przykładowy format zwróconych danych. 
 
    ```json
    [
@@ -46,16 +46,15 @@ Poniżej przedstawiony jest diagram na którym będziemy pracować.
    ]
    ```
 
-3. Przygotuj końcówkę pozwalającą na usunięcie danych klienta.
-   a. Końcówka przyjmująca dane wysłane na adres **HTTP DELETE** na adres
-   `/api/clients/{idClient}`
-   b. Końcówka powinna najpierw sprawdzić czy klient nie posiada żadnych
-   przypisanych wycieczek. Jeśli klient posiada co najmniej jedną przypisaną wycieczkę – zwracamy błąd i usunięcie nie dochodzi do skutku.
+3. Przygotuj końcówkę pozwalającą na usunięcie danych klienta.  
+   a. Końcówka przyjmująca dane wysłane na adres **HTTP DELETE** na adres 
+   `/api/clients/{idClient}`  
+   b. Końcówka powinna najpierw sprawdzić czy klient nie posiada żadnych przypisanych wycieczek. Jeśli klient posiada co najmniej jedną przypisaną wycieczkę – zwracamy błąd i usunięcie nie dochodzi do skutku.  
 
-4. Przygotuj końcówkę pozwalającą na przypisanie klienta do wycieczki.
-   a. Końcówka powinna przyjmować żądania **HTTP POST** wysłane na adres
-   `/api/trips/{idTrip}/clients`
-   b. Parametry przesłane w ciele żądania powinna wyglądać następująco (format danych może być inny):
+4. Przygotuj końcówkę pozwalającą na przypisanie klienta do wycieczki.  
+   a. Końcówka powinna przyjmować żądania **HTTP POST** wysłane na adres  
+   `/api/trips/{idTrip}/clients`   
+   b. Parametry przesłane w ciele żądania powinna wyglądać następująco (format danych może być inny):   
 
    ```json
    {
@@ -70,13 +69,13 @@ Poniżej przedstawiony jest diagram na którym będziemy pracować.
    }
    ```
 
-   c. Po przyjęciu danych sprawdzamy:
+   c. Po przyjęciu danych sprawdzamy: 
 
    - Czy klient o danym numerze PESEL istnieje. Jeśli nie, dodajemy go do bazy
-     danych.
-   - Czy klient nie jest już zapisaną na wspomnianą wycieczkę – w takim
-     wypadku zwracamy błąd
-   - Czy wycieczka istnieje – jeśli nie – zwracamy błąd
+     danych. 
+   - Czy klient nie jest już zapisaną na wspomnianą wycieczkę – w takim 
+     wypadku zwracamy błąd 
+   - Czy wycieczka istnieje – jeśli nie – zwracamy błąd 
 
    d. „PaymentDate” może posiadać wartość null, dla tych klientów, którzy jeszcze nie
    zapłacili za podróż. Ponadto kolumna „RegisteredAt” w tabeli Client_Trip
